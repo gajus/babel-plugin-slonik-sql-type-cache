@@ -99,9 +99,9 @@ defineBuildSqlType((sql, uid, build) => {
     return sqlTypeCache[uid];
   }
 
-  const zodSchema = build();
+  const zodSchema = build() as z.AnyZodObject;
   const acceleratedZodSchema = ZodAccelerator.build(zodSchema);
-  const sqlType = sql.type(acceleratedZodSchema);
+  const sqlType = sql.type(acceleratedZodSchema as unknown as z.ZodTypeAny);
 
   sqlTypeCache[uid] = sqlType;
 
