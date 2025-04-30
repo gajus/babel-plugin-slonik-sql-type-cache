@@ -1,9 +1,7 @@
-import { type createSqlTag, type SqlTag } from '@slonik/sql-tag';
-
-type SqlType = ReturnType<typeof createSqlTag>['type'];
+import { type SqlTag } from '@slonik/sql-tag';
 
 export const defineBuildSqlType = (
-  build: (sql: SqlTag, hash: string, buildSqlType: () => SqlType) => void,
+  build: (sql: SqlTag, hash: string, build: () => unknown) => void,
 ) => {
   globalThis.buildSqlType = build;
 };
