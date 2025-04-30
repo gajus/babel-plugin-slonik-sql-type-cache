@@ -1,7 +1,9 @@
-import { type z } from 'zod';
+import { type createSqlTag, type SqlTag } from '@slonik/sql-tag';
+
+type SqlType = ReturnType<typeof createSqlTag>['type'];
 
 export const defineBuildSqlType = (
-  build: (hash: string, buildZodSchema: () => z.ZodTypeAny) => void,
+  build: (sql: SqlTag, hash: string, buildSqlType: () => SqlType) => void,
 ) => {
   globalThis.buildSqlType = build;
 };
