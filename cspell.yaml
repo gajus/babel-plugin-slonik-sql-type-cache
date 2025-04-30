@@ -3,6 +3,7 @@ ignoreRegExpList:
 language: en
 version: '0.2'
 words:
+  - slonik
   - citext
   - corge
   - fkey
