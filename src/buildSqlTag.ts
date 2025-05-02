@@ -6,10 +6,10 @@ import { type Visitor } from '@babel/traverse';
 import * as t from '@babel/types';
 import { createHash } from 'node:crypto';
 
-const calculateLocationHash = (filename: string, loc: t.SourceLocation) => {
+const calculateLocationHash = (code: string, loc: t.SourceLocation) => {
   return createHash('sha256')
     .update(
-      `${filename.split('/').slice(-2).join('/')}:${loc.start.line}:${loc.start.column}:${loc.end.line}:${loc.end.column}`,
+      `${code}:${loc.start.line}:${loc.start.column}:${loc.end.line}:${loc.end.column}`,
     )
     .digest('hex');
 };
@@ -116,8 +116,7 @@ export default declare((api) => {
         return;
       }
 
-      const filename = this.filename || 'unknown';
-      const locationHash = calculateLocationHash(filename, loc);
+      const locationHash = calculateLocationHash(this.file.code, loc);
 
       // Create the new function expression that wraps the original argument
       const wrappedArgument = t.arrowFunctionExpression(
