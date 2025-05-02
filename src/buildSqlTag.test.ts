@@ -23,7 +23,7 @@ pluginTester({
           await pool.query(
             globalThis.buildSqlType(
               sql,
-              "841bbdd6931cc06b01215d9ef692cdfec530f76d78567569756f721fe36c63f0",
+              "d9412862c025ac1aa884c33f719e7535ce47830325cd5d949f1e94970fb9fa1d",
               () => {
                 return z.object({
                   bar: z.text(),
@@ -53,7 +53,7 @@ pluginTester({
           await pool.query(
             globalThis.buildSqlType(
               sql,
-              "42f364d7abdace8651d60d9143a4a738849edf12562fcf3d3762b1e3093f1424",
+              "b016f5affaf8a9a593e9a2efa5d903503f356de2ee088c9bded749d0ea6ec1e9",
               () => {
                 return PersonZodSchema;
               }
@@ -84,7 +84,7 @@ pluginTester({
           await pool.query(
             globalThis.buildSqlType(
               sql,
-              "e4055e289f36190353ae68fbfcde107a81e15396a833eb899ba241801a8dae28",
+              "20e784eee65ba17efc5c44df925f0c0ceac769c90eb76c902a25100555271c2d",
               () => {
                 return FooZodSchema;
               }
