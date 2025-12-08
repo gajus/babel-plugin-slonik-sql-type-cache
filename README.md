@@ -1,3 +1,6 @@
+> [!WARNING]
+> Deprecated in favor of https://github.com/gajus/babel-plugin-zod-hoist
+
 # Babel Plugin to Cache sql.type() initializations
 
 Automatically transforms Slonik's [`sql.type()`](https://github.com/gajus/slonik) calls to use a caching mechanism that prevents expensive re-initialization of Zod schemas, improving performance without requiring code changes, i.e.,
